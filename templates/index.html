@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction </title>
+<link rel="shortcut icon" type="image/png" href="static/images/icon.png"/>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+
+label {
+  font-style: normal;
+   font-size: 20px;
+   font-family: Georgia;
+
+
+   
+}
+
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 10px;
+}
+
+.col-25 {
+  float: center;
+  width: 40%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: center;
+  width: 40%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 20%;
+    margin-top: 0;
+  }
+}
+input[type=button], input[type=submit], input[type=reset] {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+h2.oblique {
+  font-style: oblique;
+ font-size: 40px;
+ font-weight: bold;
+font-variant: small-caps;
+}
+</style>
+</head>
+<body>
+<center>
+<h2 class="oblique">Insurance Prediction Form</h2>
+ <div id="meta_para">
+      <p >The data is taken from an Insurance Company. The trained machine learning model is made available to predict if the person is going to buy insurance or not
+	  . The model is <b>87%</b>(approx) accurate. Enjoy! <br> </p>
+      <p><b>Instruction</b>: fill the form for prediction </p>
+    </div>
+<div class="container">
+  <form action="/result" method="POST">
+  <div class="row">
+    <div class="col-25">
+     <label for="age">Age</label>
+    </div>
+    <div class="col-75">
+        <input type="text" id="age" name="age" placeholder="your age...." required >
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+   <label for="sex">Gender</label>
+  </div>
+  <div class="col-25">
+  <select id="sex" name="sex">
+      <option value="0">Female</option>
+      <option value="1">Male</option>
+     </select>
+  </div>
+      </div>
+  
+   <div class="row">
+    <div class="col-25">
+    <label for="cp">Vehicle Damage</label>
+  </div>
+  <div class="col-25">
+  <select id="cp" name="cp">
+      <option value="1"> Yes </option>
+      <option value="0"> No </option>
+      </select>
+  </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-25">
+      <label for="code">Region code</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="code" name="code" placeholder="region code value.." required>
+    </div>
+  </div>
+      <div class="row">
+    <div class="col-25">
+    <label for="va">Vehicle Age</label>
+  </div>
+  <div class="col-25">
+  <select id="va" name="va">
+      <option value="1">  <1 yr </option>
+      <option value="0"> 1-2yr </option>
+      <option value="2"> >2 yr</option>
+           </select>
+  </div>
+      </div>
+
+   <div class="row">
+    <div class="col-25">
+    <label for="pi">Previously Insured </label>
+  </div>
+  <div class="col-25">
+  <select id="pi" name="pi">
+      <option value="1"> Yes </option>
+      <option value="0"> No </option>
+      </select>
+  </div>
+       </div>
+
+   <div class="row">
+    <div class="col-25">
+    <label for="dl">Driving license</label>
+  </div>
+  <div class="col-25">
+  <select id="dl" name="dl">
+      <option value="1"> Yes </option>
+      <option value="0"> No </option>
+      </select>
+  </div>
+       </div>
+
+  <div class="row">
+    <div class="col-25">
+      <label for="ap">Annual premium</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="ap" name="ap" placeholder="annual premium value.." required>
+    </div>
+
+       </div>
+
+  <div class="row">
+    <div class="col-25">
+      <label for="ps">Policy Sales Channel</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="ps" name="ps" placeholder="value.." required>
+    </div>
+
+       </div>
+
+  <div class="row">
+    <div class="col-25">
+      <label for="vi">Vintage</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="vi" name="vi" placeholder="value.." required>
+    </div>
+
+
+
+  <br>
+ 
+  <input type="submit" value="PREDICT">
+   
+  
+  <input type="reset" value="RESET">
+ 
+  </form>
+</div>
+</center>
+</body>
+</html>
