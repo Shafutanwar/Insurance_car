@@ -41,8 +41,7 @@ def result():
             prediction='ABNORMAL'
         else:
             prediction='NORMAL'
-        from keras import backend as K
-        K.clear_session()
+       
             
         return render_template("result.html",prediction=prediction)
 if __name__ == "__main__":
